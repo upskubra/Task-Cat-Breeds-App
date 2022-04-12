@@ -1,14 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.CatDetailFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp"
+        tools:context=".view.CatDetailFragment">
 
-</FrameLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#FFFFFF">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="5dp">
+
+                <ImageView
+                    android:id="@+id/cat_detail_back"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
+                    app:srcCompat="@drawable/icon_back">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/cat_detail_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="@string/test"
+                    android:layout_marginVertical="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/cat_detail_favorite"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:src="@drawable/icon_paw">
+
+                </ImageView>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </TableLayout>
+
+        <ImageView
+            android:id="@+id/cat_detail_image"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:layout_marginVertical="50dp"
+            android:src="@drawable/icon_paw">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/cat_detail_temperament"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginVertical="10dp"
+            android:background="#FFECB3"
+            android:text="@string/test">
+
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/cat_detail_origin"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#FFECB3"
+            android:text="@string/test">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/cat_detail_url"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginVertical="10dp"
+
+            android:background="#FFECB3"
+            android:text="@string/test">
+
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/cat_detail_life"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#FFECB3"
+            android:text="@string/test">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/cat_detail_dog"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginVertical="10dp"
+            android:background="#FFECB3"
+            android:text="@string/test">
+
+
+        </TextView>
+
+
+    </LinearLayout>
+</layout>
