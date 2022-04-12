@@ -1,43 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="100dp"
-    app:cardCornerRadius="30dp">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="30dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
 
 
-        <ImageView
-            android:id="@+id/recycler_item_imageView"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_weight="1"
-            android:padding="5dp"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            <ImageView
+                android:id="@+id/recycler_item_imageView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/cat_image"
+                android:padding="5dp"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
-        <TextView
-            android:id="@+id/recycler_item_textView"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_weight="2"
-            android:text="CAT BREEDS"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/recycler_item_textView"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_weight="2"
+                android:text="CAT BREEDS"
+                android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/recycler_item_fav_icon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            tools:srcCompat="@drawable/icon_paw">
+            <ImageView
+                android:id="@+id/recycler_item_fav_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                tools:srcCompat="@drawable/icon_paw">
 
-        </ImageView>
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            </ImageView>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+</layout>
