@@ -11,14 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".view.MainActivity">
+        tools:context=".view.CatListFragment">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/nav_graph"
-            android:name="androidx.navigation.fragment.NavHostFragment"
+        <EditText
+            android:id="@+id/search_bar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/nav_graph" />
+            android:layout_height="50dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>
