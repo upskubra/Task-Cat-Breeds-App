@@ -1,4 +1,4 @@
-package com.example.catbreeds
+package com.example.catbreeds.model
 
 
 // sample model class

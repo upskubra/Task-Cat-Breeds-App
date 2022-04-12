@@ -25,14 +25,16 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_weight="1"
+                android:layout_marginStart="16dp"
                 android:contentDescription="@string/cat_image"
                 android:padding="5dp"
-                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+                android:src="@drawable/icon_paw"/>
 
             <TextView
-                android:id="@+id/recycler_item_textView"
-                android:layout_width="100dp"
+                android:id="@+id/recycler_item_name"
+                android:layout_width="75dp"
                 android:layout_height="30dp"
+                android:layout_marginHorizontal="16dp"
                 android:layout_weight="2"
                 android:text="CAT BREEDS"
                 android:textStyle="bold" />
@@ -41,8 +43,9 @@
                 android:id="@+id/recycler_item_fav_icon"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
                 android:layout_weight="1"
-                tools:srcCompat="@drawable/icon_paw">
+                android:src="@drawable/icon_paw">
 
             </ImageView>
         </androidx.appcompat.widget.LinearLayoutCompat>
