@@ -8,19 +8,18 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.catbreeds.R
 import com.example.catbreeds.databinding.RecyclerViewItemBinding
-import com.example.catbreeds.model.CatModel
+import com.example.catbreeds.model.CatModelItem
 import com.example.catbreeds.view.CatListFragmentDirections
 
-class CatListRecyclerAdapter(private val list: List<CatModel>) :
+class CatListRecyclerAdapter(private val list: ArrayList<CatModelItem>) :
     RecyclerView.Adapter<CatListRecyclerAdapter.ViewHolder>() {
 
-    class ViewHolder(var itemView: RecyclerViewItemBinding) :
+    class ViewHolder(itemView: RecyclerViewItemBinding) :
         RecyclerView.ViewHolder(itemView.root) {
 
-        private val textView: TextView = itemView.findViewById(R.id.recycler_item_name)
-        fun bind(cat: CatModel) {
+        private val textView: TextView = itemView.recyclerItemName
+        fun bind(cat: CatModelItem) {
             textView.text = cat.name
-
         }
     }
 
@@ -36,13 +35,10 @@ class CatListRecyclerAdapter(private val list: List<CatModel>) :
             parent,
             false
         )
-
-
         return ViewHolder(view)
     }
 
     override fun getItemCount(): Int = list.size
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(list[position])
         holder.itemView.setOnClickListener {
@@ -50,5 +46,11 @@ class CatListRecyclerAdapter(private val list: List<CatModel>) :
                 CatListFragmentDirections.actionCatListFragmentToCatDetailFragment()
             it.findNavController().navigate(action)
         }
+    }
+
+    fun updateCatList(newCatList: List<CatModelItem>) {
+        list.clear()
+        list.addAll(newCatList)
+        notifyDataSetChanged()
     }
 }
