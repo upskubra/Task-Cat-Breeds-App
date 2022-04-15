@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="cat_image">Cat Image</string>
+    <string name="favorite_cats">Favorite Cats</string>
+    <string name="back">back</string>
 </resources>
