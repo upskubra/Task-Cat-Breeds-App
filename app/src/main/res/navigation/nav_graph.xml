@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/catListFragment"
         android:name="com.example.catbreeds.view.CatListFragment"
-        android:label="CatListFragment" >
+        android:label="CatListFragment">
         <action
             android:id="@+id/action_catListFragment_to_favCatFragment"
             app:destination="@id/favCatFragment" />
@@ -20,16 +20,37 @@
         android:id="@+id/catDetailFragment"
         android:name="com.example.catbreeds.view.CatDetailFragment"
         android:label="fragment_cat_detail"
-        tools:layout="@layout/fragment_cat_detail" >
+        tools:layout="@layout/fragment_cat_detail">
         <action
             android:id="@+id/action_catDetailFragment_to_catListFragment"
             app:destination="@id/catListFragment" />
+        <argument
+            android:name="catName"
+            app:argType="string" />
+        <argument
+            android:name="catOrigin"
+            app:argType="string" />
+        <argument
+            android:name="catImage"
+            app:argType="string" />
+        <argument
+            android:name="catDescription"
+            app:argType="string" />
+        <argument
+            android:name="catDogFriendly"
+            app:argType="integer" />
+        <argument
+            android:name="catWikiUrl"
+            app:argType="string" />
+        <argument
+            android:name="catLifeSpan"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/favCatFragment"
         android:name="com.example.catbreeds.view.FavCatFragment"
         android:label="fragment_fav_cat"
-        tools:layout="@layout/fragment_fav_cat" >
+        tools:layout="@layout/fragment_fav_cat">
         <action
             android:id="@+id/action_favCatFragment_to_catDetailFragment"
             app:destination="@id/catDetailFragment" />
