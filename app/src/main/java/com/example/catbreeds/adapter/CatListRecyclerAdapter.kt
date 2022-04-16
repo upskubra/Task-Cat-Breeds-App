@@ -19,7 +19,7 @@ class CatListRecyclerAdapter(private val list: ArrayList<CatModelItem>) :
     class ViewHolder(itemView: RecyclerViewItemBinding) :
         RecyclerView.ViewHolder(itemView.root) {
 
-        private val textView: TextView = itemView.recyclerItemName
+       private val textView: TextView = itemView.recyclerItemName
         private val image: ImageView = itemView.recyclerItemImageView
         fun bind(cat: CatModelItem) {
             textView.text = cat.name
@@ -49,12 +49,23 @@ class CatListRecyclerAdapter(private val list: ArrayList<CatModelItem>) :
 
     override fun getItemCount(): Int = list.size
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(list[position])
-        holder.itemView.setOnClickListener {
-            val action =
-                CatListFragmentDirections.actionCatListFragmentToCatDetailFragment(list[position].id)
+
+
+
+
+       holder.bind(list[position])
+     holder.itemView.setOnClickListener {
+            val action = CatListFragmentDirections.actionCatListFragmentToCatDetailFragment(
+                list[position].name,
+                list[position].origin,
+                list[position].image.url,
+                list[position].description,
+                list[position].dogFriendly,
+                list[position].wikipediaUrl,
+                list[position].lifeSpan
+            )
             it.findNavController().navigate(action)
-        }
+       }
     }
 
     fun updateCatList(newCatList: List<CatModelItem>) {
