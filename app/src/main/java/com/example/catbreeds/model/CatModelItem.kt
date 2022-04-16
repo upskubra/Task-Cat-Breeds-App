@@ -1,7 +1,9 @@
 package com.example.catbreeds.model
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 data class CatModelItem(
     @SerializedName("description")
@@ -10,8 +12,8 @@ data class CatModelItem(
     val dogFriendly: Int,
     @SerializedName("id")
     val id: String,
-    //@SerializedName("image")
-    // val image: İmage,
+    @SerializedName("image")
+    val image: İmage,
     @SerializedName("life_span")
     val lifeSpan: String,
     @SerializedName("name")
