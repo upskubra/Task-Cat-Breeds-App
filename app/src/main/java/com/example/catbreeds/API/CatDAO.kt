@@ -16,7 +16,7 @@ interface CatDAO {
     fun loadAllByIds(catIds: IntArray): List<CatModelItem>
 
     @Insert
-    fun insertAll(vararg users: CatModelItem)
+    fun insertAll(vararg cats: List<CatModelItem>)
 
     @Delete
     fun deleteAllCats():List<CatModelItem>
