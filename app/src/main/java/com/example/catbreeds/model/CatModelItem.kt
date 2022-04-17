@@ -1,7 +1,12 @@
 package com.example.catbreeds.model
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.Ignore
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "favCatList")
 data class CatModelItem(
     @SerializedName("description")
     val description: String,
@@ -9,8 +14,6 @@ data class CatModelItem(
     val dogFriendly: Int,
     @SerializedName("id")
     val id: String,
-    @SerializedName("image")
-    val image: İmage,
     @SerializedName("life_span")
     val lifeSpan: String,
     @SerializedName("name")
@@ -23,4 +26,10 @@ data class CatModelItem(
     val temperament: String,
     @SerializedName("wikipedia_url")
     val wikipediaUrl: String
-)
+) {
+    @Ignore
+    @SerializedName("image")
+    val image: İmage? = null
+    @PrimaryKey(autoGenerate = true)
+    private var uid = 0
+}
