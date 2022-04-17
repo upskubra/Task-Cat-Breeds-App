@@ -31,5 +31,5 @@ data class CatModelItem(
     @SerializedName("image")
     val image: İmage? = null
     @PrimaryKey(autoGenerate = true)
-    private var uid = 0
+    var uid = 0
 }
