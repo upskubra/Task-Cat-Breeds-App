@@ -7,7 +7,7 @@ import androidx.room.Query
 import com.example.catbreeds.model.CatModelItem
 
 @Dao
-interface CatFavDAO {
+interface CatDAO {
 
     @Query("SELECT * FROM favCatList")
     fun getAll(): List<CatModelItem>
@@ -17,6 +17,9 @@ interface CatFavDAO {
 
     @Insert
     fun insertAll(vararg users: CatModelItem)
+
+    @Delete
+    fun deleteAllCats():List<CatModelItem>
 
     @Delete
     fun delete(user: CatModelItem)

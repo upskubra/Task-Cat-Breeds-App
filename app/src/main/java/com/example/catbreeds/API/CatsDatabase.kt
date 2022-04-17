@@ -7,7 +7,7 @@ import com.example.catbreeds.model.CatModelItem
 
 @androidx.room.Database(entities = [CatModelItem::class], version = 1)
 abstract class CatsDatabase : RoomDatabase() {
-    abstract fun countryDao(): CatFavDAO
+    abstract fun catDao(): CatDAO
 
 
     // as Singleton
