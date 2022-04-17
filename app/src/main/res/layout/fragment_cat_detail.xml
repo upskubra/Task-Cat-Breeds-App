@@ -56,11 +56,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="16dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                app:cardBackgroundColor="@color/meow_light_yellow"
+                app:cardBackgroundColor="@color/meow_very_light_yellow"
                 app:cardCornerRadius="30dp">
 
                 <ImageView
@@ -80,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                app:cardBackgroundColor="@color/meow_light_yellow"
+                app:cardBackgroundColor="@color/meow_very_light_yellow"
                 app:cardCornerRadius="30dp">
 
                 <TextView
@@ -97,15 +97,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                app:cardBackgroundColor="@color/meow_light_yellow"
+                app:cardBackgroundColor="@color/meow_very_light_yellow"
                 app:cardCornerRadius="30dp">
 
                 <TextView
                     android:id="@+id/cat_detail_origin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:background="@color/meow_light_yellow" />
+                    android:layout_margin="16dp" />
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -114,15 +113,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                app:cardBackgroundColor="@color/meow_light_yellow"
+                app:cardBackgroundColor="@color/meow_very_light_yellow"
                 app:cardCornerRadius="30dp">
 
                 <TextView
                     android:id="@+id/cat_detail_url"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:background="@color/meow_light_yellow" />
+                    android:layout_margin="16dp" />
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -130,32 +128,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                app:cardBackgroundColor="@color/meow_light_yellow"
+                app:cardBackgroundColor="@color/meow_very_light_yellow"
                 app:cardCornerRadius="30dp">
 
                 <TextView
                     android:id="@+id/cat_detail_life"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:background="@color/meow_light_yellow" />
+                    android:layout_margin="16dp" />
 
             </com.google.android.material.card.MaterialCardView>
-
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                app:cardBackgroundColor="@color/meow_light_yellow"
+                app:cardBackgroundColor="@color/meow_very_light_yellow"
                 app:cardCornerRadius="30dp">
 
                 <TextView
                     android:id="@+id/cat_detail_dog"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:background="@color/meow_light_yellow" />
+                    android:layout_margin="16dp" />
 
             </com.google.android.material.card.MaterialCardView>
 
