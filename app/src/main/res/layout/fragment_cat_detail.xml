@@ -1,97 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".view.CatDetailFragment">
+        android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#FFECB3"
-            android:elevation="4dp"
-            android:fitsSystemWindows="true"
-            android:titleTextColor="@android:color/white">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".view.CatDetailFragment">
 
-            <ImageView
-                android:id="@+id/cat_detail_back"
-                android:layout_width="30dp"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                android:contentDescription="@string/back"
-                android:src="@drawable/icon_back" />
+                android:background="@color/meow_light_yellow"
+                android:elevation="4dp"
+                android:fitsSystemWindows="true"
+                android:titleTextColor="@android:color/white">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/cat_detail_name"
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/cat_detail_back"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="8dp"
+                    android:contentDescription="@string/back"
+                    android:src="@drawable/icon_back" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cat_detail_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/cat_detail_fav"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end"
+                    android:layout_margin="8dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/icon_paw" />
+            </androidx.appcompat.widget.Toolbar>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=" "
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="@color/meow_light_yellow"
+                app:cardCornerRadius="30dp">
 
-            <ImageView
-                android:id="@+id/cat_detail_fav"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="end"
-                android:layout_marginEnd="5dp"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/icon_paw" />
-        </androidx.appcompat.widget.Toolbar>
+                <ImageView
+                    android:id="@+id/cat_detail_image"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:contentDescription="@string/cat_image"
+                    android:src="@drawable/icon_paw">
 
-        <ImageView
-            android:id="@+id/cat_detail_image"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:layout_gravity="center"
-            android:layout_marginVertical="50dp"
-            android:contentDescription="@string/cat_image"
-            android:src="@drawable/icon_paw">
+                </ImageView>
 
-        </ImageView>
+            </com.google.android.material.card.MaterialCardView>
 
-        <TextView
-            android:id="@+id/cat_detail_temperament"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginVertical="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:background="#FFECB3" />
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/meow_light_yellow"
+                app:cardCornerRadius="30dp">
 
-        <TextView
-            android:id="@+id/cat_detail_origin"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:background="#FFECB3" />
+                <TextView
+                    android:id="@+id/cat_detail_temperament"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_marginVertical="10dp" />
 
-        <TextView
-            android:id="@+id/cat_detail_url"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginVertical="10dp"
-            android:background="#FFECB3" />
+            </com.google.android.material.card.MaterialCardView>
 
-        <TextView
-            android:id="@+id/cat_detail_life"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:background="#FFECB3" />
 
-        <TextView
-            android:id="@+id/cat_detail_dog"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginVertical="10dp"
-            android:background="#FFECB3" />
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/meow_light_yellow"
+                app:cardCornerRadius="30dp">
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/cat_detail_origin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@color/meow_light_yellow" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/meow_light_yellow"
+                app:cardCornerRadius="30dp">
+
+                <TextView
+                    android:id="@+id/cat_detail_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@color/meow_light_yellow" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/meow_light_yellow"
+                app:cardCornerRadius="30dp">
+
+                <TextView
+                    android:id="@+id/cat_detail_life"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@color/meow_light_yellow" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/meow_light_yellow"
+                app:cardCornerRadius="30dp">
+
+                <TextView
+                    android:id="@+id/cat_detail_dog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@color/meow_light_yellow" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
 </layout>
