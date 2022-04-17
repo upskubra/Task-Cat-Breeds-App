@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="meow_very_light_yellow">#FFFFF0</color>
     <color name="meow_light_yellow">#FEFCBF</color>
     <color name="meow_med_dark_green">#D69E2E</color>
     <color name="meow_dark_yellow">#5F370E</color>
