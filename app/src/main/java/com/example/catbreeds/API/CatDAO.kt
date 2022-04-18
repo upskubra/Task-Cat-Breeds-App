@@ -9,18 +9,29 @@ import com.example.catbreeds.model.CatModelItem
 @Dao
 interface CatDAO {
 
-    @Query("SELECT * FROM favCatList")
-    fun getAll(): List<CatModelItem>
+    // suspend coroutines, pause & resume
+    //vararg multiple Country object, we do not how many
+    // Lis<Long> for Primary Keys
 
-    @Query("SELECT * FROM favCatList WHERE uid IN (:catIds)")
-    fun loadAllByIds(catIds: IntArray): List<CatModelItem>
+    @Query("SELECT * FROM catDataList")
+    suspend fun getAll(): List<CatModelItem>
+
+    @Query("SELECT  * FROM catDataList WHERE uid IN (:catIds)")
+    suspend fun loadAllByIds(catIds: Int): CatModelItem
 
     @Insert
-    fun insertAll(vararg cats: CatModelItem) : List<Long>
+    suspend fun insertAll(vararg cats: CatModelItem): List<Long>
 
     @Delete
-    fun deleteAllCats():List<CatModelItem>
+    suspend fun deleteAll(cats: List<CatModelItem>)
 
-    @Delete
-    fun delete(user: CatModelItem)
+   /* @Query("SELECT * FROM catDataList WHERE favorite IN (:favorite)")
+    suspend fun getFavCats(favorite: Boolean): List<CatModelItem>
+
+    @Query("DELETE FROM catDataList WHERE favorite IN (:favorite)")
+    suspend fun deleteFavCats(favorite: Boolean): List<CatModelItem>*/
+
+
+    //@Query("DELETE FROM catDataList")
+    //suspend fun delete(cats: CatModelItem)
 }
