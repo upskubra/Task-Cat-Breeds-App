@@ -47,6 +47,7 @@ dependencies {
     def navVersion = '2.4.2'
     def preferencesVersion = '1.2.0'
 
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.30"
     implementation 'androidx.core:core-ktx:1.7.0'
