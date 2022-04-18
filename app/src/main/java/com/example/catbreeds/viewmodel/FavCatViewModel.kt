@@ -1,6 +1,8 @@
 package com.example.catbreeds.viewmodel
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import com.example.catbreeds.model.CatModelItem
 
-class FavCatViewModel : ViewModel() {
-}
+class FavCatViewModel(application: Application) : BaseViewModel(application) {
+
+    }
