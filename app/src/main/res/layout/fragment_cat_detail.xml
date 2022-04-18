@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="selectedCat"
+            type="com.example.catbreeds.model.CatModelItem" />
+
     </data>
 
     <androidx.core.widget.NestedScrollView
@@ -38,6 +42,7 @@
                     android:id="@+id/cat_detail_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@{selectedCat.name}"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
@@ -70,6 +75,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="16dp"
                     android:contentDescription="@string/cat_image"
+                    android:downloadImage="@{selectedCat.image}"
                     android:src="@drawable/icon_paw">
 
                 </ImageView>
@@ -84,11 +90,12 @@
                 app:cardCornerRadius="30dp">
 
                 <TextView
-                    android:id="@+id/cat_detail_temperament"
+                    android:id="@+id/cat_detail_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
-                    android:layout_marginVertical="10dp" />
+                    android:layout_marginVertical="10dp"
+                    android:text="@{selectedCat.description}" />
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -104,7 +111,8 @@
                     android:id="@+id/cat_detail_origin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp" />
+                    android:layout_margin="16dp"
+                    android:text="@{selectedCat.origin}" />
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -120,7 +128,8 @@
                     android:id="@+id/cat_detail_url"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp" />
+                    android:layout_margin="16dp"
+                    android:text="@{selectedCat.wikipediaUrl}" />
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -135,7 +144,8 @@
                     android:id="@+id/cat_detail_life"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp" />
+                    android:layout_margin="16dp"
+                    android:text="@{selectedCat.lifeSpan}" />
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -150,7 +160,8 @@
                     android:id="@+id/cat_detail_dog"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp" />
+                    android:layout_margin="16dp"
+                    android:text="@{selectedCat.dogFriendly.toString()}" />
 
             </com.google.android.material.card.MaterialCardView>
 
