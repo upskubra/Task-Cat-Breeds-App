@@ -6,30 +6,45 @@ import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "favCatList")
+
+@Entity(tableName = "catDataList")
 data class CatModelItem(
+    @ColumnInfo(name = "description")
     @SerializedName("description")
-    val description: String,
+    val description: String?,
+    @ColumnInfo(name = "dog_friendly")
     @SerializedName("dog_friendly")
-    val dogFriendly: Int,
+    val dogFriendly: Int?,
+    @ColumnInfo(name = "id")
     @SerializedName("id")
-    val id: String,
+    val id: String?,
+    @ColumnInfo(name = "life_span")
     @SerializedName("life_span")
-    val lifeSpan: String,
+    val lifeSpan: String?,
+    @ColumnInfo(name = "name")
     @SerializedName("name")
-    val name: String,
+    val name: String?,
+    @ColumnInfo(name = "origin")
     @SerializedName("origin")
-    val origin: String,
+    val origin: String?,
+    @ColumnInfo(name = "reference_ image_id")
     @SerializedName("reference_image_id")
-    val referenceİmageİd: String,
+    val referenceİmageİd: String?,
+    @ColumnInfo(name = "temperament")
     @SerializedName("temperament")
-    val temperament: String,
+    val temperament: String?,
+    @ColumnInfo(name = "wikipedia_url")
     @SerializedName("wikipedia_url")
-    val wikipediaUrl: String
+    val wikipediaUrl: String?
 ) {
     @Ignore
+    @ColumnInfo(name = "image")
     @SerializedName("image")
-    val image: İmage? = null
+    var image: İmage? = null
+
     @PrimaryKey(autoGenerate = true)
     var uid = 0
+
+    /*@ColumnInfo(name = "favorite")
+    var favorite: Boolean = false*/
 }
