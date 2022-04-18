@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.catbreeds.R
 import com.example.catbreeds.adapter.CatListRecyclerAdapter
@@ -37,6 +38,11 @@ class CatListFragment : Fragment() {
         observeLiveData()
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
         binding.recyclerView.adapter = catAdapter
+
+        binding.catListFavIcon.setOnClickListener {
+            val action = CatListFragmentDirections.actionCatListFragmentToFavCatFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
     private fun observeLiveData() {
