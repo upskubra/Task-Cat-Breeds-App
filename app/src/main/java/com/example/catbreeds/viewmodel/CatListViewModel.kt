@@ -1,9 +1,11 @@
 package com.example.catbreeds.viewmodel
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.catbreeds.API.CatsDatabase
 import com.example.catbreeds.API.RetrofitBuilder
+import com.example.catbreeds.Util.CustomSharedPreferences
 import com.example.catbreeds.model.CatModelItem
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -15,12 +17,36 @@ class CatListViewModel(application: Application) : BaseViewModel(application = a
 
     private var retrofitBuilder = RetrofitBuilder()
     private var disposable = CompositeDisposable() // for disposing the api calls
+    private var customPreferences = CustomSharedPreferences(getApplication())
+    private var refreshTime = 0 * 60 * 1000 * 1000 * 1000L // 10 minutes in nanoseconds
+
 
     val cats = MutableLiveData<List<CatModelItem>>()
 
 
     fun refreshData() {
+        val updateTime = customPreferences.getTime()
+        if (updateTime != null && updateTime != 0L && System.nanoTime() - updateTime < refreshTime) {
+            Log.e("CatListViewModel", "Data is up to date")
+            getDataFromDatabase()
+        } else {
+            Log.e("CatListViewModel", "Data is out of date")
+            getDataAPI()
+        }
+
+    }
+
+    fun refreshFromAPI() {
         getDataAPI()
+    }
+
+
+    private fun getDataFromDatabase() {
+        launch {
+            val dao = CatsDatabase(getApplication()).catDao()
+            val cats = dao.getAll()
+            showCat(cats)
+        }
     }
 
     private fun getDataAPI() {
@@ -49,14 +75,16 @@ class CatListViewModel(application: Application) : BaseViewModel(application = a
 
         launch {
             val dao = CatsDatabase(getApplication()).catDao()
-            dao.deleteAllCats()
+            dao.deleteAll(list)
             val listLong = dao.insertAll(*list.toTypedArray())
             var i = 0
             while (i < list.size) {
                 list[i].uid = listLong[i].toInt()
                 i++
             }
+            showCat(list)
         }
+        customPreferences.saveTime(System.nanoTime())
     }
 
     override fun onCleared() {
