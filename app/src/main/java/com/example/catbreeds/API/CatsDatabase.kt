@@ -5,7 +5,8 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.catbreeds.model.CatModelItem
 
-@androidx.room.Database(entities = [CatModelItem::class], version = 1)
+@androidx.room.Database(entities = [CatModelItem::class], version = 1, exportSchema = false)
+@androidx.room.TypeConverters(Converters::class)
 abstract class CatsDatabase : RoomDatabase() {
     abstract fun catDao(): CatDAO
 
@@ -27,7 +28,7 @@ abstract class CatsDatabase : RoomDatabase() {
         }
 
         private fun createDatabase(context: Context) = Room.databaseBuilder(
-            context.applicationContext, CatsDatabase::class.java, "database_country"
+            context.applicationContext, CatsDatabase::class.java, "cats.db"
         )
             .build()
 
