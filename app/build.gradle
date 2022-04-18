@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -58,10 +59,13 @@ dependencies {
 
     implementation "android.arch.lifecycle:extensions:$lifeCycleExtensionVersion"
 
+    //room
     implementation "androidx.room:room-runtime:$roomVersion"
-    implementation "androidx.legacy:legacy-support-v4:1.0.0"
     kapt "androidx.room:room-compiler:$roomVersion"
     implementation "androidx.room:room-ktx:$roomVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.4.1"
+
+    //coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
 
     implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
@@ -72,12 +76,11 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
-
     implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
     implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
 
     implementation "com.github.bumptech.glide:glide:$glideVersion"
     implementation "androidx.preference:preference:$preferencesVersion"
 
-
+    implementation 'com.google.code.gson:gson:2.8.6'
 }
