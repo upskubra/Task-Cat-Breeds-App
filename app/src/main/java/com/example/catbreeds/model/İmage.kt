@@ -9,7 +9,7 @@ data class İmage(
     @SerializedName("id")
     val id: String,
     @SerializedName("url")
-    val url: String,
+    var url: String,
     @SerializedName("width")
     val width: Int
 )
