@@ -25,26 +25,10 @@
             android:id="@+id/action_catDetailFragment_to_catListFragment"
             app:destination="@id/catListFragment" />
         <argument
-            android:name="catName"
-            app:argType="string" />
-        <argument
-            android:name="catOrigin"
-            app:argType="string" />
-        <argument
-            android:name="catImage"
-            app:argType="string" />
-        <argument
-            android:name="catDescription"
-            app:argType="string" />
-        <argument
-            android:name="catDogFriendly"
-            app:argType="integer" />
-        <argument
-            android:name="catWikiUrl"
-            app:argType="string" />
-        <argument
-            android:name="catLifeSpan"
-            app:argType="string" />
+            android:name="uid"
+            app:argType="integer"
+            android:defaultValue="0" />
+
     </fragment>
     <fragment
         android:id="@+id/favCatFragment"
