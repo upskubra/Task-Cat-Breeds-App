@@ -1,4 +1,4 @@
-package com.example.catbreeds.API
+package com.example.catbreeds.Data
 
 import android.content.Context
 import androidx.room.Room

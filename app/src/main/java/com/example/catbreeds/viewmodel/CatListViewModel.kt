@@ -2,8 +2,9 @@ package com.example.catbreeds.viewmodel
 
 import android.app.Application
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
-import com.example.catbreeds.API.CatsDatabase
+import com.example.catbreeds.Data.CatsDatabase
 import com.example.catbreeds.API.RetrofitBuilder
 import com.example.catbreeds.Util.CustomSharedPreferences
 import com.example.catbreeds.model.CatModelItem
@@ -18,7 +19,7 @@ class CatListViewModel(application: Application) : BaseViewModel(application = a
     private var retrofitBuilder = RetrofitBuilder()
     private var disposable = CompositeDisposable() // for disposing the api calls
     private var customPreferences = CustomSharedPreferences(getApplication())
-    private var refreshTime = 0 * 60 * 1000 * 1000 * 1000L // 10 minutes in nanoseconds
+    private var refreshTime = 10 * 60 * 1000 * 1000 * 1000L // 10 minutes in nanoseconds
 
 
     val cats = MutableLiveData<List<CatModelItem>>()
@@ -43,9 +44,9 @@ class CatListViewModel(application: Application) : BaseViewModel(application = a
 
     private fun getDataFromDatabase() {
         launch {
-            val dao = CatsDatabase(getApplication()).catDao()
-            val cats = dao.getAll()
+            val cats = CatsDatabase(getApplication()).catDao().getAll()
             showCat(cats)
+            Toast.makeText(getApplication(),"Meow From SQLite",Toast.LENGTH_LONG).show()
         }
     }
 
@@ -57,6 +58,7 @@ class CatListViewModel(application: Application) : BaseViewModel(application = a
                 .subscribeWith(object : DisposableSingleObserver<List<CatModelItem>>() {
                     override fun onSuccess(t: List<CatModelItem>) {
                         storeInDB(t)
+                        Toast.makeText(getApplication(),"Meow From API",Toast.LENGTH_LONG).show()
                     }
 
                     override fun onError(e: Throwable) {

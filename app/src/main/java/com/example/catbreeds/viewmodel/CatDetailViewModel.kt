@@ -2,7 +2,7 @@ package com.example.catbreeds.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
-import com.example.catbreeds.API.CatsDatabase
+import com.example.catbreeds.Data.CatsDatabase
 import com.example.catbreeds.model.CatModelItem
 import kotlinx.coroutines.launch
 
