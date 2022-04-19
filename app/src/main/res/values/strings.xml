@@ -6,4 +6,6 @@
     <string name="test">TEST</string>
     <string name="favorite_cats">Favorite Cats</string>
     <string name="back">back</string>
+    <string name="favorite">Favorite</string>
+    <string name="search">Search</string>
 </resources>
