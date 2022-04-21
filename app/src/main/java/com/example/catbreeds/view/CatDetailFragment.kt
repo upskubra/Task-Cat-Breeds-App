@@ -13,8 +13,9 @@ import androidx.navigation.Navigation
 import com.example.catbreeds.R
 import com.example.catbreeds.databinding.FragmentCatDetailBinding
 import com.example.catbreeds.viewmodel.CatDetailViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class CatDetailFragment : Fragment() {
 
     // set data binding

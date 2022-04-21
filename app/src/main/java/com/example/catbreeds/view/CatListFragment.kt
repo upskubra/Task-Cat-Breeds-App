@@ -16,9 +16,10 @@ import com.example.catbreeds.adapter.CatListRecyclerAdapter
 import com.example.catbreeds.databinding.FragmentCatListBinding
 import com.example.catbreeds.model.CatModelItem
 import com.example.catbreeds.viewmodel.CatListViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
-
+@AndroidEntryPoint
 class CatListFragment : Fragment() {
     private lateinit var binding: FragmentCatListBinding
     private lateinit var viewModel: CatListViewModel

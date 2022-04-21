@@ -5,8 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import com.example.catbreeds.Data.CatsDatabase
 import com.example.catbreeds.model.CatModelItem
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class CatDetailViewModel(application: Application) : BaseViewModel(application) {
+class CatDetailViewModel @Inject constructor(application: Application) : BaseViewModel(application) {
 
     val catLiveData = MutableLiveData<CatModelItem>()
 

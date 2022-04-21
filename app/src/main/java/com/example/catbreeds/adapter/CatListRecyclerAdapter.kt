@@ -9,13 +9,13 @@ import com.example.catbreeds.R
 import com.example.catbreeds.databinding.RecyclerViewItemBinding
 import com.example.catbreeds.model.CatModelItem
 import com.example.catbreeds.view.CatListFragmentDirections
+import dagger.hilt.android.scopes.ActivityScoped
 
+@ActivityScoped
 class CatListRecyclerAdapter(var list: ArrayList<CatModelItem>) :
     RecyclerView.Adapter<CatListRecyclerAdapter.CatViewHolder>() {
 
-
     class CatViewHolder(var view: RecyclerViewItemBinding) : RecyclerView.ViewHolder(view.root) {
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CatViewHolder {
@@ -49,4 +49,5 @@ class CatListRecyclerAdapter(var list: ArrayList<CatModelItem>) :
         list.addAll(newCatList)
         notifyDataSetChanged()
     }
+
 }

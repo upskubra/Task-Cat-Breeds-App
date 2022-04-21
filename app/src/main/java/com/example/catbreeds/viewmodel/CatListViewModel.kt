@@ -8,13 +8,15 @@ import com.example.catbreeds.Data.CatsDatabase
 import com.example.catbreeds.API.RetrofitBuilder
 import com.example.catbreeds.Util.CustomSharedPreferences
 import com.example.catbreeds.model.CatModelItem
+import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class CatListViewModel(application: Application) : BaseViewModel(application = application) {
+class CatListViewModel @Inject constructor (application: Application) : BaseViewModel(application = application) {
 
     private var retrofitBuilder = RetrofitBuilder()
     private var disposable = CompositeDisposable() // for disposing the api calls

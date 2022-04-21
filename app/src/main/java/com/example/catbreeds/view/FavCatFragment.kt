@@ -12,8 +12,9 @@ import androidx.navigation.Navigation
 import com.example.catbreeds.R
 import com.example.catbreeds.databinding.FragmentFavCatBinding
 import com.example.catbreeds.viewmodel.FavCatViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class FavCatFragment : Fragment() {
     private lateinit var binding: FragmentFavCatBinding
     private lateinit var viewModel: FavCatViewModel
