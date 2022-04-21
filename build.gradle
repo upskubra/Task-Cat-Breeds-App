@@ -5,6 +5,8 @@ buildscript {
     dependencies {
         classpath("androidx.navigation.safeargs.kotlin:androidx.navigation.safeargs.kotlin.gradle.plugin:2.4.2")
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // Hilt dependency
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.38.1'
     }
     repositories {
         mavenCentral()
